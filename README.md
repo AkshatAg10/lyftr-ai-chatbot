@@ -4,9 +4,9 @@ React + FastAPI + LiteLLM + SQLite. Multi-turn chat, automatic API-key failover,
 
 ## 1. Live URLs
 
-- Frontend: `<PASTE FRONTEND URL AFTER DEPLOYMENT>`
-- Backend: `<PASTE BACKEND URL AFTER DEPLOYMENT>` (health check: `<BACKEND URL>/health`)
-- GitHub repository: `<PASTE REPOSITORY URL>`
+- Frontend: https://lyftr-ai-chatbot-zeta.vercel.app/
+- Backend: https://lyftr-ai-chatbot-azdc.onrender.com/ (health check: https://lyftr-ai-chatbot-azdc.onrender.com/health)
+- GitHub repository: https://github.com/AkshatAg10/lyftr-ai-chatbot
 
 ## 2. Run locally: with Docker and without
 
@@ -30,7 +30,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 export LLM_API_KEYS="<key1>,<key2>"
 export DATABASE_URL="sqlite:///./app.db"
-export ALLOWED_ORIGINS="http://localhost:3000"
+export ALLOWED_ORIGINS= "https://lyftr-ai-chatbot-azdc.onrender.com/"
 export ENABLE_FAILURE_SIMULATION=true
 uvicorn main:app --port 8000
 ```
@@ -40,7 +40,7 @@ Frontend (Node 20+):
 ```bash
 cd frontend
 npm install
-VITE_API_URL=http://localhost:8000 npm run dev   # http://localhost:3000
+VITE_API_URL=https://lyftr-ai-chatbot-zeta.vercel.app/ npm run dev 
 ```
 
 Backend tests (no network or real keys needed): `cd backend && python -m pytest -q`
@@ -50,7 +50,7 @@ Backend tests (no network or real keys needed): `cd backend && python -m pytest 
 | Variable | Meaning |
 |---|---|
 | `LLM_API_KEYS` | Comma-separated key pool (>= 2). Ids are `key_1`, `key_2`, ... in order |
-| `LLM_MODEL` | LiteLLM model name (default `gemini/gemini-2.5-flash`) |
+| `LLM_MODEL` | LiteLLM model name (default `gemini/gemini-3.5-flash-lite`) |
 | `DATABASE_URL` | SQLite location, e.g. `sqlite:////data/app.db` |
 | `ALLOWED_ORIGINS` | Comma-separated CORS origins |
 | `ENABLE_FAILURE_SIMULATION` | `true` enables the `X-Simulate-Failure` header |
