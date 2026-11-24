@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: #f4f5f7; color: #1c1f26; }
+.app { max-width: 760px; height: 100vh; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+h1 { margin: 0; font-size: 1.3rem; }
+.system { padding: 8px 10px; border: 1px solid #cfd3da; border-radius: 6px; font: inherit; font-size: 0.9rem; background: #fff; }
+.chat { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding: 12px; background: #fff; border: 1px solid #dfe2e7; border-radius: 8px; }
+.empty { color: #7b8190; margin: auto; }
+.msg { max-width: 85%; padding: 10px 12px; border-radius: 8px; line-height: 1.45; white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg.user { align-self: flex-end; background: #2b59c3; color: #fff; }
+.msg.assistant { align-self: flex-start; background: #eef0f4; }
+.msg.error { align-self: flex-start; background: #fdecec; color: #9b1c1c; border: 1px solid #f5c2c2; }
+.thinking { color: #7b8190; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 8px; padding-top: 6px; border-top: 1px solid #dcdfe5; font-size: 0.75rem; color: #5a6070; font-family: ui-monospace, Menlo, Consolas, monospace; }
+.composer { display: flex; gap: 8px; }
+.composer textarea { flex: 1; resize: none; padding: 10px; border: 1px solid #cfd3da; border-radius: 6px; font: inherit; }
+.composer button { padding: 0 22px; border: 0; border-radius: 6px; background: #2b59c3; color: #fff; font: inherit; cursor: pointer; }
+.composer button:disabled { background: #9aa8cc; cursor: default; }
